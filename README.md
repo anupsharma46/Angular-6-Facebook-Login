@@ -63,7 +63,7 @@
          
  **5. Install ngx-order-pipe**
  
-      run the command from node terminal `npm install ngx-order-pipe --save `
+ run the command from node terminal `npm install ngx-order-pipe --save `
           
   **6. Compile and Run**
   

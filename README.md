@@ -19,7 +19,7 @@
           useFactory: getAuthServiceConfigs
         }
         
-  - Include below code in app.module.ts and put your application ID in FacebookLoginProvider
+  - Include below code in app.module.ts and put your `application ID in FacebookLoginProvider`
              
               export function getAuthServiceConfigs() {
 

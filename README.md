@@ -1,28 +1,68 @@
-# FbLogin
+# Angular-FB-Login
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
+**1. Create a facebook application**
 
-## Development server
+    Goto developer.facebook.com
+    Login with your facebook credential.
+    Create New App, it will give you an Application ID for your new App.
+    
+**2. Create Angular Application using Angular CLI**   
+    
+**3. Install angular-6-social-login and setting up Facebook in your app**  
+  - npm install --save angular-6-social-login 
+  - Import SocialLoginModule, AuthServiceConfig, FacebookLoginProvider from angular-6-social-login in your app.module.ts
+  - Add SocialLoginModule in imports array of @Ngmodule decorator in app.module.ts
+  - Add below object in providers array in app.module.ts
+    
+        {
+          provide: AuthServiceConfig,
+          useFactory: getAuthServiceConfigs
+        }
+        
+  - Include below code in app.module.ts and put your application ID in FacebookLoginProvider
+             
+              export function getAuthServiceConfigs() {
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files
+               let config = new AuthServiceConfig(
+                  [
+                    {
+                      id: FacebookLoginProvider.PROVIDER_ID,
+                      provider: new FacebookLoginProvider("Your Application ID")
+                    }
+                  ]);
+                   return config;
+              }
+              
+  **4. Create the components**
+  
+   - In my case, i have created a fbLogin and home component
+   - Put below code in fbLogin.component.ts 
+      
+            
+          constructor( private socialAuthService: AuthService, private router: Router ) {}
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md)
-# Angular-6-fbLogin-App
+          public socialSignIn(socialPlatform : string) {
+            let socialPlatformProvider;
+            if(socialPlatform == "facebook"){
+              socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+            }
+            this.socialAuthService.signIn(socialPlatformProvider).then(
+                (userData) => {
+                console.log(socialPlatform+" sign in data : " , userData);
+                this.navigateToHomeRoute()
+              }
+            );
+          }
+          navigateToHomeRoute():void{
+            this.router.navigate(['/home']);
+          }
+      
+   - Put below code in fbLogin.component.html
+     
+         <button class="loginBtn loginBtn--facebook" (click)="socialSignIn('facebook')">Login with facebook</button>
+          
+  **5. Compile and Run**
+  
+      ng serve --open
+  
+  

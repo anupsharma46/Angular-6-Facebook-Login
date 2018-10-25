@@ -64,7 +64,7 @@
  **5. Create a pipe for table data filter**
     run below commmand to create filter pipe:
      
-     `ng generate pipe filter`
+     ng generate pipe filter
      
    Put the code filter.pipe.ts
          

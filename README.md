@@ -62,7 +62,8 @@
          <button class="loginBtn loginBtn--facebook" (click)="socialSignIn('facebook')">Login with facebook</button>
          
  **5. Create a pipe for table data filter**
-    run below commmand to create filter pipe:
+ 
+   run below commmand to create filter pipe:
      
      ng generate pipe filter
      

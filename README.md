@@ -61,13 +61,20 @@
      
          <button class="loginBtn loginBtn--facebook" (click)="socialSignIn('facebook')">Login with facebook</button>
          
- **5. Install ngx-order-pipe**
+ **5. Create a pipe for table data filter**
+    run below commmand to create filter pipe:
+     
+     `ng generate pipe filter`
+     
+   Put the code filter.pipe.ts
+         
+ **6. Install ngx-order-pipe**
  
  run the below command from node terminal for table sorting
  
  `npm install ngx-order-pipe --save `
           
-  **6. Compile and Run**
+  **7. Compile and Run**
   
       ng serve --open
   

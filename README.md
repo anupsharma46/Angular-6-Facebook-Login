@@ -35,7 +35,7 @@
               
   **4. Create the components**
   
-   - In my case, i have created a fbLogin and home component
+   - In my case, i have created two component fbLogin and home
    - Put below code in fbLogin.component.ts 
       
             

@@ -19,7 +19,7 @@
           useFactory: getAuthServiceConfigs
         }
         
-  - Include below code in app.module.ts and put your `application ID in FacebookLoginProvider`
+  - Include below code in app.module.ts and put your `application ID in FacebookLoginProvider constructor`
              
               export function getAuthServiceConfigs() {
 
@@ -63,7 +63,9 @@
          
  **5. Install ngx-order-pipe**
  
- run the command from node terminal `npm install ngx-order-pipe --save `
+ run the below command from node terminal for table sorting
+ 
+ `npm install ngx-order-pipe --save `
           
   **6. Compile and Run**
   

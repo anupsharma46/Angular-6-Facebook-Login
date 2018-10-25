@@ -48,7 +48,7 @@
             }
             this.socialAuthService.signIn(socialPlatformProvider).then(
                 (userData) => {
-                console.log(socialPlatform+" sign in data : " , userData);
+                console.log(socialPlatform + " sign-in user data : " , userData);
                 this.navigateToHomeRoute()
               }
             );

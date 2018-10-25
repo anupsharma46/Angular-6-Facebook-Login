@@ -67,7 +67,7 @@
      
      ng generate pipe filter
      
-   Put the code filter.pipe.ts
+   Put the code in filter.pipe.ts
          
  **6. Install ngx-order-pipe**
  

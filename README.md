@@ -60,8 +60,11 @@
    - Put below code in fbLogin.component.html
      
          <button class="loginBtn loginBtn--facebook" (click)="socialSignIn('facebook')">Login with facebook</button>
+         
+ **5. Install ngx-order-pipe**
+      run the command from node terminal `npm install ngx-order-pipe --save `
           
-  **5. Compile and Run**
+  **6. Compile and Run**
   
       ng serve --open
   

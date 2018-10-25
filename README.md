@@ -1,4 +1,4 @@
-# Angular-FB-Login
+# Angular-6-Facebook-Login
 
 **1. Create a facebook application**
 
